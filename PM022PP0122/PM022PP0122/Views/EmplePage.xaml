@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM022PP0122.Views.EmplePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Label Text="ID" FontSize="16" Padding="10,5,30,10"/>-->
+            <Entry Placeholder="Id" 
+                   Keyboard="Text" 
+                   x:Name="txtId" 
+                   BackgroundColor="White"
+                   Text="{Binding id}"/>
+
+
+            <Entry Placeholder="Nombre" 
+                   Keyboard="Text" 
+                   x:Name="txtNombre" 
+                   BackgroundColor="White"
+                   Text="{Binding nombre}"/>
+
+
+            <Entry Placeholder="Edad" 
+                   Keyboard="Text" 
+                   x:Name="txtEdad" 
+                   BackgroundColor="White"
+                   Text="{Binding edad}"/>
+
+            <Picker Title="Seleccione el genero" x:Name="genero" TitleColor="Red">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Masculino</x:String>
+                        <x:String>Femenino</x:String>
+                        
+                     
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <DatePicker Format="D" 
+                        VerticalOptions="CenterAndExpand" 
+                        x:Name="fecha"
+                        Date="{Binding fecha_ingreso}"/>
+
+
+            <Button Text="Guardar" x:Name="btnSave" Margin="10,0,10,0" Clicked="btnSave_Clicked"/>
+
+            <Button Text="Eliminar" x:Name="btnDelete" Margin="10,0,10,0" Clicked="btnDelete_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,13 +7,30 @@
     <StackLayout>
 
         <Label Text="Nombre" FontSize="16" Padding="10,5,30,10"/>
-        <Entry Placeholder="Nombre" Keyboard="Text" x:Name="txtNombre" BackgroundColor="White"/>
-        <Label Text="Edad" FontSize="16" Padding="1,5,30,0"/>
-        <Entry Placeholder="Edad" Keyboard="Text" x:Name="txtEdad" BackgroundColor="White"/>
+        
+        <Entry Placeholder="Nombre" 
+               Keyboard="Text" 
+               x:Name="txtNombre" 
+               BackgroundColor="White"/>
+        
+        <Label Text="Edad" 
+               FontSize="16" 
+               Padding="1,5,30,0"/>
+        
+        <Entry Placeholder="Edad" 
+               Keyboard="Text" 
+               x:Name="txtEdad" 
+               BackgroundColor="White"/>
 
-        <Button Text="Mostrar" x:Name="btnMostrar" Margin="10,0,10,0" Clicked="btnMostrar_Clicked"/>
+        <Button Text="Mostrar" 
+                x:Name="btnMostrar" 
+                Margin="10,0,10,0" 
+                Clicked="btnMostrar_Clicked"/>
 
-        <Button Text="Segunda Pagina" x:Name="btnSegunda" Margin="10,0,10,0" Clicked="btnSegundaPag_Clicked"/>
+        <Button Text="Segunda Pagina" 
+                x:Name="btnSegunda" 
+                Margin="10,0,10,0" 
+                Clicked="btnSegundaPag_Clicked"/>
 
     </StackLayout>
 
