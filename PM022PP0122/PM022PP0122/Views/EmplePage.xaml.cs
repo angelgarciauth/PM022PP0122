@@ -46,9 +46,17 @@ namespace PM022PP0122.Views
 
         }
 
-        private void btnDelete_Clicked(object sender, EventArgs e)
+        private async void btnDelete_Clicked(object sender, EventArgs e)
         {
-
+            var emple = new Empleado
+            {
+                id = Convert.ToInt32(txtId.Text),
+                nombre = txtNombre.Text,
+                edad = txtEdad.Text,
+                genero = genero.SelectedItem.ToString(),
+                fechaIngreso = fecha.Date
+            };
+            var result = await App.DBase.EmpleDelete(emple);
         }
 
         private void clear()
@@ -57,6 +65,19 @@ namespace PM022PP0122.Views
             txtEdad.Text = "";
             txtNombre.Text = "";
 
+        }
+
+        private async void btnActualizar_Clicked(object sender, EventArgs e)
+        {
+            var emple = new Empleado
+            {
+                id = 0,
+                nombre = txtNombre.Text,
+                edad = txtEdad.Text,
+                genero = genero.SelectedItem.ToString(),
+                fechaIngreso = fecha.Date
+            };
+            var result = await App.DBase.EmpleDelete(emple);
         }
     }
 }

@@ -16,6 +16,8 @@ namespace PM022PP0122.Controller
             dbase = new SQLiteAsyncConnection(dbpath);
             //creacion de las tablas de la base de datos
             dbase.CreateTableAsync<Empleado>(); //creando tabla de empleados
+
+            dbase.CreateTableAsync<Contactos>();
         }
 
         #region Operaciones
@@ -58,6 +60,42 @@ namespace PM022PP0122.Controller
         }
 
         #endregion Operaciones
+
+        #region contactos
+        public Task<int> contactoSave(Contactos contactos)
+        {
+            if (contactos.id != 0)
+            {
+                return dbase.UpdateAsync(contactos);
+            }
+            else
+            {
+                return dbase.InsertAsync(contactos);
+            }
+        }
+
+        //Read
+        public Task<List<Contactos>> ObtenerListaContacto()
+        {
+            return dbase.Table<Contactos>().ToListAsync();
+        }
+
+        //Read v2
+        public Task<Contactos> ObtenerContacto(int pid)
+        {
+            return dbase.Table<Contactos>()
+                .Where(i => i.id == pid)
+                .FirstOrDefaultAsync();
+        }
+
+        //Delete
+
+        public Task<int> ContactoDelete(Contactos contacto)
+        {
+            return dbase.DeleteAsync(contacto);
+        }
+
+        #endregion contactos
 
     }
 }

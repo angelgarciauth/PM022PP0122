@@ -25,7 +25,7 @@
                    BackgroundColor="White"
                    Text="{Binding edad}"/>
 
-            <Picker Title="Seleccione el genero" x:Name="genero" TitleColor="Red">
+            <Picker Title="Seleccione el genero" x:Name="genero" TitleColor="Red" SelectedItem="{Binding genero}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Masculino</x:String>
@@ -43,6 +43,8 @@
 
 
             <Button Text="Guardar" x:Name="btnSave" Margin="10,0,10,0" Clicked="btnSave_Clicked"/>
+
+            <Button Text="Guardar" x:Name="btnActualizar" Margin="10,0,10,0" Clicked="btnActualizar_Clicked"/>
 
             <Button Text="Eliminar" x:Name="btnDelete" Margin="10,0,10,0" Clicked="btnDelete_Clicked"/>
         </StackLayout>
