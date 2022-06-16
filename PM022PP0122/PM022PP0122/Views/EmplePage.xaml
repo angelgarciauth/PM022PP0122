@@ -5,6 +5,11 @@
     <ContentPage.Content>
         <StackLayout>
             <!--<Label Text="ID" FontSize="16" Padding="10,5,30,10"/>-->
+            <Image x:Name="Foto" BackgroundColor="Bisque"
+                   WidthRequest="100" HeightRequest="170" />
+            
+            <Button Text="Tomar Foto" x:Name="btnTomarFoto" Margin="10,0,10,0" Clicked="btnTomarFoto_Clicked"/>
+            
             <Entry Placeholder="Id" 
                    Keyboard="Text" 
                    x:Name="txtId" 
@@ -43,6 +48,8 @@
 
 
             <Button Text="Guardar" x:Name="btnSave" Margin="10,0,10,0" Clicked="btnSave_Clicked"/>
+
+            
 
             <Button Text="Guardar" x:Name="btnActualizar" Margin="10,0,10,0" Clicked="btnActualizar_Clicked"/>
 

@@ -15,5 +15,7 @@ namespace PM022PP0122.Models
         public String genero { get; set; }
 
         public DateTime fechaIngreso { get; set; }
+
+        public Byte[] foto { get; set; }
     }
 }
